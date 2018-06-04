@@ -1,6 +1,6 @@
 # Spellbook
 
-## Day 1 Hoomework
+## Day 1 Homework
 
 * Make the button change the text of the heading (the `<h1>`).
 
@@ -16,4 +16,4 @@
 
 ## Super Mega Bonus Credit Hyper Fighting
 
-* M Make sure it works when you press _enter_ on the keyboard, not just when you click the button.
+* Make sure it works when you press _enter_ on the keyboard, not just when you click the button.
