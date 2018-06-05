@@ -11,15 +11,20 @@ button.addEventListener('click', (e) => {
 
 const form = document.querySelector('form')
 
-// Changes the text of the first h1 header to whatever is in the text field and clears the text field
+// Adds a spell to a unordered list based on what the user submitted in the text field
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
     const f = e.target
    
     const spellName = f.textBox.value
-    debugger
     const spellsDiv = document.querySelector("#spellList")
-    spellsDiv.innerHTML += `<li>${spellName}</li>`
+
+    const listNode = document.createElement("li")
+    const textNode = document.createTextNode(`${spellName}`)
+
+    listNode.appendChild(textNode)
+    spellsDiv.appendChild(listNode)
+    
     f.reset()
 })
