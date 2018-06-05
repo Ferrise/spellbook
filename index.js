@@ -15,9 +15,11 @@ const form = document.querySelector('form')
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
-   
     const f = e.target
-
-    h1.textContent = f.textBox.value
+   
+    const spellName = f.textBox.value
+    debugger
+    const spellsDiv = document.querySelector("#spellList")
+    spellsDiv.innerHTML += `<li>${spellName}</li>`
     f.reset()
 })
