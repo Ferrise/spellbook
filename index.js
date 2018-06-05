@@ -42,6 +42,11 @@ spellForm.addEventListener('submit', (e) => {
     f.reset()
 })
 
-function createSpellSpan(spellType){
-    
+function createSpan(classType, parentNode, childNode){
+    const spanNode = document.createElement("span")
+    spanNode.appendChild(childNode)
+
+    spanNode.className = classType
+
+    parentNode.appendChild(spanNode)
 }
