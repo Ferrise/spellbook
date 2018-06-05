@@ -9,21 +9,13 @@ button.addEventListener("click", (e) => {
     spells.textContent = "BOOM!"
 })
 
-const submitButton = document.querySelector("#submit")
+const form = doucment.querySelector('form')
 
 // Changes the text of the first h1 header to whatever is in the text field and clears the text field
-submitButton.addEventListener("click", (e) => {
+form.addEventListener("click", (e) => {
     e.preventDefault()
     const textBox = document.getElementById("textBox")
     h1.textContent = textBox.value
     textBox.value = ""
    
-})
-
-// Triggers a click event on the submit button when the user clicks enter in the text field
-document.addEventListener('keypress', (e) => {
-    const keyName = event.keyCode
-    if(keyName === 13){
-        document.querySelector("form").submit()
-    }
 })
