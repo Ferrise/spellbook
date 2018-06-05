@@ -50,3 +50,10 @@ function createSpan(classType, parentNode, childNode){
 
     parentNode.appendChild(spanNode)
 }
+
+function createListItem(parentNode, childNode){
+    const listItemNode = document.createElement("li")
+    
+    listItemNode.appendChild(childNode)
+    parentNode.appendChild(spanNode)
+}
