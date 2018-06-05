@@ -13,6 +13,7 @@ const submitButton = document.querySelector("#submit")
 
 // Changes the text of the first h1 header to whatever is in the text field and clears the text field
 submitButton.addEventListener("click", (e) => {
+    e.preventDefault()
     const textBox = document.getElementById("textBox")
     h1.textContent = textBox.value
     textBox.value = ""
