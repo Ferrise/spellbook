@@ -14,6 +14,7 @@ const form = document.querySelector('form')
 // Changes the text of the first h1 header to whatever is in the text field and clears the text field
 form.addEventListener('submit', (e) => {
     e.preventDefault()
+
    
     const f = e.target
 
