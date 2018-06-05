@@ -41,3 +41,7 @@ spellForm.addEventListener('submit', (e) => {
 
     f.reset()
 })
+
+function createSpellSpan(spellType){
+    
+}
