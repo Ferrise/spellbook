@@ -5,14 +5,27 @@ const h1 = document.querySelector('h1')
 button.addEventListener('click', (e) => {
     h1.textContent = 'Expecto Patronum!'
     
-    const spells = document.getElementById('spells')
-    spells.textContent = 'BOOM!'
+    const infoHeader = document.querySelector('h2')
+    infoHeader.textContent = 'BOOM!'
 })
 
-const form = document.querySelector('form')
+const headerForm = document.querySelector("#headerManipulators form")
+
+// Changes the text of the first h1 header to whatever is in the text field and clears the text field
+headerForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    const textBox = document.getElementById("textBox")
+    h1.textContent = textBox.value
+
+    headerForm.reset()
+   
+})
+
+const spellForm = document.querySelector('#spellManipulators form')
 
 // Adds a spell to a unordered list based on what the user submitted in the text field
-form.addEventListener('submit', (e) => {
+spellForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
     const f = e.target
@@ -25,6 +38,6 @@ form.addEventListener('submit', (e) => {
 
     listNode.appendChild(textNode)
     spellsDiv.appendChild(listNode)
-    
+
     f.reset()
 })

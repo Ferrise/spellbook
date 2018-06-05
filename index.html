@@ -6,17 +6,27 @@
     <title>Spell Book</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
-  
 </head>
+
 <body>
     <h1>Spellbook</h1>
+    <h2>This book contains spells</h2>
+    <h5>Use them at your own discretion</h5>
+    
+    <div id = "headerManipulators">
+        <button>Change Text</button>
 
-    <button>Change Text</button>
+        <form>
+            <p>Choose Text</p>
+            <input type = "text" id = "textBox"><br><br>
+            <input type = "submit" value = "Cast a spell!" id = "submit"><br><br>
+        </form>
+    </div>
 
 
-    <div>
-        <form target = "_blank">
-            <p><What spell would you like to cast?<br><p></p>
+    <div id = "spellManipulators">
+        <form>
+            <p>What spell would you like to cast?</p>
             <input 
                 type = "text" 
                 id = "textBox" 
