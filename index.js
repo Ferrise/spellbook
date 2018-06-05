@@ -16,6 +16,6 @@ form.addEventListener("submit", (e) => {
     e.preventDefault()
     const textBox = document.getElementById("textBox")
     h1.textContent = textBox.value
-    textBox.value = ""
+    form.reset()
    
 })
