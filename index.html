@@ -17,13 +17,33 @@
 
     <div>
         <form target = "_blank">
-            What spell would you like to cast?<br>
+            <p><What spell would you like to cast?<br><p></p>
             <input 
                 type = "text" 
                 id = "textBox" 
                 placeholder= "Enter a spell name"
                 autofocus><br><br>
-            <!--<input type = "radio" id = "radio"><br><br>-->
+
+            
+            <div>
+               <p>What type of magic user are you?</p>
+                <input 
+                    type = "radio" 
+                    id = "radio" 
+                    name = "magicUser"
+                    value = "wizard">Wizard<br>
+                <input 
+                    type = "radio" 
+                    id = "radio" 
+                    name = "magicUser"
+                    value = "sorcerer">Sorcerer<br>
+                <input 
+                    type = "radio" 
+                    id = "radio" 
+                    name = "magicUser"
+                    value = "witch">Witch<br><br>
+            </div>
+
             <button type = "submit">Cast Spell</button>
         </form>
     </div>
