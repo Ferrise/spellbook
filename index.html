@@ -12,24 +12,31 @@
     <h1>Spellbook</h1>
     <h2 id = "spells">Spells</h2>
 
-    <ul>
-        <li>Avada Kedavra</li>
-        <li>Lumos</li>
-        <li>Expelliarmus</li>
-        <li>Sectumsempra</li>
-    </ul>
-
     <button>Change Text</button>
 
-    <form autofocus>
-        What spell would you like to cast?<br>
-        <input type = "text" id = "textBox"><br><br>
-        <input type = "radio" id = "radio"><br><br>
-        <button type = "submit" id = "submit">Cast a spell!</button>
-    </form>
+    <div>
+        <form target = "_blank">
+            What spell would you like to cast?<br>
+            <input 
+                type = "text" 
+                id = "textBox" 
+                placeholder= "Enter a spell name"
+                autofocus><br><br>
+            <!--<input type = "radio" id = "radio"><br><br>-->
+            <button type = "submit">Cast Spell</button>
+        </form>
+    </div>
     
+    <main>
+        <ul id = "spells">
+            <li>Avada Kedavra</li>
+            <li>Lumos</li>
+            <li>Expelliarmus</li>
+            <li>Sectumsempra</li>
+        </ul>
+    </main>
+
     <script src="index.js"></script>
 
-    
 </body>
 </html>
