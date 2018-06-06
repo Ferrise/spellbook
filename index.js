@@ -31,6 +31,8 @@ const SpellCaster = {
         })
     },
 
+    spells: [],
+
     renderProperty: function(className, textContent){
         const span = document.createElement('span')
         span.textContent = textContent
@@ -45,7 +47,9 @@ const SpellCaster = {
         properties.forEach((property) => {
             listItem.appendChild(this.renderProperty(property, obj[property]))
         })
-    
+        
+        this.spells.push(listItem)
+        
         return listItem
     },
 
