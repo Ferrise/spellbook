@@ -60,7 +60,6 @@ function buildSpan(classType, parentNode, childNode){
     spanNode.className = classType
 
     parentNode.appendChild(spanNode)
-    debugger
     return spanNode
 }
 
