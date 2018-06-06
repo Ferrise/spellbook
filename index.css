@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Homemade+Apple|UnifrakturCook:700');
+
 * {
     margin: 0;
+    font-family: 'UnifrakturCook', serif;
 }
 
+body{
+    background: url(wooden_table.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 .wizard {
     color: blue;
 }
