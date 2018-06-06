@@ -35,7 +35,6 @@ const SpellCaster = {
         const span = document.createElement('span')
         span.textContent = textContent
         span.classList.add(className)
-        
         return span
     },
 
@@ -43,10 +42,9 @@ const SpellCaster = {
         const properties = Object.keys(obj)
         const listItem = document.createElement('li')
     
-        listItem.appendChild(this.renderProperty(obj['magicUserType'], obj['spell']))
-        /*properties.forEach((property) => {
-            listItem.appendChild(this.renderProperty(obj[property]))
-        })*/
+        properties.forEach((property) => {
+            listItem.appendChild(this.renderProperty(property, obj[property]))
+        })
     
         return listItem
     },
@@ -56,11 +54,14 @@ const SpellCaster = {
 
         const form = ev.target
         const magicUserTypes = Array.from(document.querySelectorAll('#magicUserType input'))
+        const magicUserType = (magicUserTypes.filter((type) => type.checked))[0].value
 
         const info = {
-            magicUserType: (magicUserTypes.filter((type) => type.checked))[0].value,
             spell: form.textBox.value
         }
+        
+        info[magicUserType] = magicUserType
+
         document.querySelector('#spellList').appendChild(this.renderItem(info))
     
         form.reset()

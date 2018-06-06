@@ -13,3 +13,9 @@
 .sorcerer{
     color: purple;
 } 
+
+.spell{
+    font-size: 1.2 em;
+    color: darkorange;
+    margin-right: 5px;
+}
