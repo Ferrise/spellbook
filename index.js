@@ -29,31 +29,46 @@ spellForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
     const f = e.target
-   
+    
+    //list item node
     const spellName = f.textBox.value
     const spellsDiv = document.querySelector("#spellList")
-
-    const listNode = document.createElement("li")
     const textNode = document.createTextNode(`${spellName}`)
 
-    listNode.appendChild(textNode)
-    spellsDiv.appendChild(listNode)
+    const listNode = buildListItem(spellsDiv, textNode)
+   
+    //span node
+    let magicUserType = document.querySelectorAll("#magicUserType input")
 
+    for(let user = 0; user < magicUserType.length; user++){
+        magicUser = magicUserType[user]
+        if(magicUser.checked) {
+            magicUserType = magicUser.value
+            break
+        }
+    }
+    //initialize magicUserType
+    buildSpan(magicUserType, spellsDiv, listNode)
+    
     f.reset()
 })
 
-function createSpan(classType, parentNode, childNode){
+function buildSpan(classType, parentNode, childNode){
     const spanNode = document.createElement("span")
     spanNode.appendChild(childNode)
 
     spanNode.className = classType
 
     parentNode.appendChild(spanNode)
+    debugger
+    return spanNode
 }
 
-function createListItem(parentNode, childNode){
+function buildListItem(parentNode, childNode){
     const listItemNode = document.createElement("li")
     
     listItemNode.appendChild(childNode)
-    parentNode.appendChild(spanNode)
+    parentNode.appendChild(listItemNode)
+
+    return listItemNode
 }
