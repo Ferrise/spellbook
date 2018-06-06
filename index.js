@@ -28,6 +28,8 @@ const SpellCaster = {
         const form = document.querySelector('#spellManipulators form')
         form.addEventListener('submit', (ev) => this.handleSubmit(ev))
     },
+    
+    spells: [],
 
     renderProperty: function(className, textContent){
         const span = document.createElement('span')
@@ -49,7 +51,8 @@ const SpellCaster = {
 
         const deleteButton = ev.target
         const parent = deleteButton.parentNode
-
+        
+        this.spells.splice(this.spells.indexOf(parent), 1)
         parent.parentNode.removeChild(parent)
     },
 
@@ -63,6 +66,7 @@ const SpellCaster = {
 
         const deleteButton = this.renderDeleteButton('delete', 'Delete Spell')
         listItem.appendChild(deleteButton)
+        this.spells.push(listItem)
 
          return listItem
     },
