@@ -22,6 +22,28 @@ headerForm.addEventListener("submit", (e) => {
    
 })
 
+// All of the code below deals with the form 
+const SpellCaster = {
+    renderProperty: function(className, textContent){
+        const span = document.createElement('span')
+        span.textContent = textContent
+        span.classList.add(className)
+        return span
+    },
+
+    renderItem: function(obj){
+        const properties = Object.keys(obj)
+        const listItem = document.createElement('li')
+
+        properties.forEach((property) => {
+            listItem.appendChild(this.renderProperty(property, obj[property]))
+        })
+
+        return listItem
+    },
+
+    
+}
 const spellForm = document.querySelector('#spellManipulators form')
 
 // Adds a spell to a unordered list based on what the user submitted in the text field
@@ -52,22 +74,3 @@ spellForm.addEventListener('submit', (e) => {
     
     f.reset()
 })
-
-function buildSpan(classType, parentNode, childNode){
-    const spanNode = document.createElement('span')
-    spanNode.appendChild(childNode)
-
-    spanNode.className = classType
-
-    parentNode.appendChild(spanNode)
-    return spanNode
-}
-
-function buildListItem(parentNode, childNode){
-    const listItemNode = document.createElement('li')
-    
-    listItemNode.appendChild(childNode)
-    parentNode.appendChild(listItemNode)
-
-    return listItemNode
-}
