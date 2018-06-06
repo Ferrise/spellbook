@@ -38,10 +38,10 @@ const SpellCaster = {
         return span
     },
 
-    renderDeleteButton: function(parent){
+    renderDeleteButton: function(className, textContent){
         const deleteButton = document.createElement('button')
-        deleteButton.textContent = "Delete"
-        deleteButton.classList.push('delete')
+        deleteButton.textContent = textContent
+        deleteButton.classList.add(className)
         return deleteButton
     },
 
@@ -52,8 +52,9 @@ const SpellCaster = {
         properties.forEach((property) => {
             listItem.appendChild(this.renderProperty(property, obj[property]))
         })
-    
-        return listItem
+
+        listItem.appendChild(this.renderDeleteButton('delete', 'Delete Spell'))
+         return listItem
     },
 
     handleSubmit: function(ev){
