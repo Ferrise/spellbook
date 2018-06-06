@@ -26,9 +26,7 @@ headerForm.addEventListener('submit', (e) => {
 const SpellCaster = {
     init: function(){
         const form = document.querySelector('#spellManipulators form')
-        form.addEventListener('submit', (ev) => {
-            this.handleSubmit(ev)
-        })
+        form.addEventListener('submit', (ev) => this.handleSubmit(ev))
     },
 
     renderProperty: function(className, textContent){
@@ -42,7 +40,17 @@ const SpellCaster = {
         const deleteButton = document.createElement('button')
         deleteButton.textContent = textContent
         deleteButton.classList.add(className)
+        deleteButton.addEventListener('click', (ev) => this.handleDeleteButton(ev))
         return deleteButton
+    },
+
+    handleDeleteButton: function(ev){
+        ev.preventDefault()
+
+        const deleteButton = ev.target
+        const parent = deleteButton.parentNode
+
+        parent.parentNode.removeChild(parent)
     },
 
     renderItem: function(obj){
@@ -53,7 +61,9 @@ const SpellCaster = {
             listItem.appendChild(this.renderProperty(property, obj[property]))
         })
 
-        listItem.appendChild(this.renderDeleteButton('delete', 'Delete Spell'))
+        const deleteButton = this.renderDeleteButton('delete', 'Delete Spell')
+        listItem.appendChild(deleteButton)
+
          return listItem
     },
 
