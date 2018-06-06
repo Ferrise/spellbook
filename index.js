@@ -38,6 +38,13 @@ const SpellCaster = {
         return span
     },
 
+    renderDeleteButton: function(parent){
+        const deleteButton = document.createElement('button')
+        deleteButton.textContent = "Delete"
+        deleteButton.classList.push('delete')
+        return deleteButton
+    },
+
     renderItem: function(obj){
         const properties = Object.keys(obj)
         const listItem = document.createElement('li')
