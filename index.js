@@ -1,36 +1,12 @@
-const button = document.querySelector('button')
-const h1 = document.querySelector('h1')
-
-// Changes the text of the first h1 header and the header with the ID spells when it is clicked
-button.addEventListener('click', (e) => {
-    h1.textContent = 'Expecto Patronum!'
-    
-    const infoHeader = document.querySelector('h2')
-    infoHeader.textContent = 'BOOM!'
-})
-
-const headerForm = document.querySelector('#headerManipulators form')
-
-// Changes the text of the first h1 header to whatever is in the text field and clears the text field
-headerForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-
-    const textBox = document.getElementById('textBox')
-    h1.textContent = textBox.value
-    
-    headerForm.reset()
-   
-})
 
 // All of the code below deals with the form 
 const SpellCaster = {
     init: function(){
+        this.spells = []
         const form = document.querySelector('#spellManipulators form')
         form.addEventListener('submit', (ev) => this.handleSubmit(ev))
     },
     
-    spells: [],
-
     renderProperty: function(className, textContent){
         const span = document.createElement('span')
         span.textContent = textContent
@@ -47,8 +23,6 @@ const SpellCaster = {
     },
 
     handleDeleteButton: function(ev){
-        ev.preventDefault()
-
         const deleteButton = ev.target
         const parent = deleteButton.parentNode
         
@@ -68,7 +42,7 @@ const SpellCaster = {
         listItem.appendChild(deleteButton)
         this.spells.push(listItem)
 
-         return listItem
+        return listItem
     },
 
     handleSubmit: function(ev){
