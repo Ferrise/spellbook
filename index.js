@@ -50,7 +50,7 @@ const SpellCaster = {
 
         const form = ev.target
         const magicUserTypes = Array.from(document.querySelectorAll('#magicUserType input'))
-        const magicUserType = (magicUserTypes.filter((type) => type.checked))[0].value
+        const magicUserType = (magicUserTypes.filter((type) => type.checked))[0].className
 
         const info = {
         }

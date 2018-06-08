@@ -3,7 +3,6 @@
 * {
     margin: 0;
     padding: 0;
-    color: blue;
 }
 
 body {
@@ -12,6 +11,7 @@ body {
     background-size: cover;
     overflow: hidden;
     font-family: 'Space Mono', serif;
+    color: blue
 }
 
 h1 {
@@ -91,16 +91,19 @@ form{
   }
 
 
-.water {
+.water, 
+.fa-tint {
     color: #40a4df;
 }
 
-.fire {
+.fire,
+.fa-fire {
     color: #E25822;
 
 }
 
-.darkness{
+.darkness,
+.fa-skull{
     color: #414a4c;
 } 
 
