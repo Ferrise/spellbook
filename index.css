@@ -8,9 +8,10 @@
 }
 
 body {
-    background: url(spacee.jpg);
+    background: url(space.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
 h1 {
@@ -18,21 +19,24 @@ h1 {
     text-align: center;
     color: rgba(45, 244, 255,0.3);
     position: relative;
-    top: 10px;
+    bottom: 5px;
     right: 15px;
     font-size: 8vw;
   }
 
-main {
-    background-image: url(spell_book.png);
+main{
+    font-size: 2rem;
+    color: rgba(100, 50, 0, 0.8);
     box-sizing: border-box;
-    width: 35vw;
-    height: 500px;
-    margin-left: 30vw;
+    background-image: url(spell_book.png);
+    background-size: cover;
     position: relative;
-    bottom: 340px;
-    overflow-y: scroll;
-    font-family: cursive;
+    bottom: 300px;
+    width: 950px;
+    margin-left: 20vw;
+    margin-top: 20px;
+    height: 600px;
+    overflow-y: auto;
 }
 
 .wizard {
@@ -52,8 +56,3 @@ main {
     color: darkorange;
     margin-right: 5px;
 }
-
-button.fav {
-    background-color: #F8BE3D;
-    color: black;
-  }
