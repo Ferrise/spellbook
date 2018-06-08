@@ -20,7 +20,7 @@ h1 {
     color: rgba(45, 244, 255,0.3);
     position: relative;
     bottom: 5px;
-    right: 15px;
+    left: 5px;
     font-size: 8vw;
   }
 
