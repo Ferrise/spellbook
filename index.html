@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Spell Book</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
 </head>
 
@@ -17,23 +18,22 @@
                 type = "text" 
                 id = "textBox" 
                 placeholder= "Enter a spell name"
-                autofocus><br><br>
+                autofocus>
 
             
             <div id = "magicUserType">
-               <p>What type of magic user are you?</p>
                 <input 
                     type = "radio" 
                     name = "magicUser"
-                    value = "wizard" checked>Wizard<br>
+                    value = "wizard" checked><i class="fas fa-skull"></i>
                 <input 
                     type = "radio" 
                     name = "magicUser"
-                    value = "sorcerer">Sorcerer<br>
+                    value = "sorcerer"><i class="fas fa-fire"></i>
                 <input 
                     type = "radio" 
                     name = "magicUser"
-                    value = "witch">Witch<br><br>
+                    value = "witch"><i class="fas fa-tint"></i>
             </div>
 
             <button type = "submit">Cast Spell</button>
