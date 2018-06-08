@@ -35,7 +35,7 @@ const SpellCaster = {
         const listItem = document.createElement('li')
     
         properties.forEach((property) => {
-            listItem.appendChild(this.renderProperty(property, obj[property]))
+            listItem.appendChild(this.renderProperty(property, obj[property] + " "))
         })
 
         const deleteButton = this.renderDeleteButton('delete', 'Delete Spell')
@@ -53,10 +53,10 @@ const SpellCaster = {
         const magicUserType = (magicUserTypes.filter((type) => type.checked))[0].value
 
         const info = {
-            spell: form.textBox.value
         }
         
         info[magicUserType] = magicUserType
+        info["spell"] = form.textBox.value
 
         document.querySelector('#spellList').appendChild(this.renderItem(info))
     
