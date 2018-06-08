@@ -33,7 +33,7 @@ main{
     bottom: 300px;
     width: 950px;
     margin-left: 20vw;
-    margin-top: 360px;
+    margin-top: 300px;
     height: 600px;
     overflow-y: auto;
     font-family: 'Cedarville Cursive', cursive;
@@ -91,20 +91,31 @@ form{
   }
 
 
-.wizard {
-    color: blue;
+.water {
+    color: #40a4df;
 }
 
-.witch {
-    color: green;
+.fire {
+    color: #E25822;
+
 }
 
-.sorcerer{
-    color: purple;
+.darkness{
+    color: #000000;
 } 
 
 .spell{
     font-size: 1.2 em;
     color: darkorange;
     margin-right: 5px;
+}
+
+#spellList{
+    list-style: none;
+    position: relative;
+    left: 75px;
+    display: flex;
+    flex-wrap: wrap;
+    top: 20px;
+    
 }
