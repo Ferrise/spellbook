@@ -1,36 +1,36 @@
 
 // All of the code below deals with the form 
-const SpellCaster = {
-    init: function(){
+class SpellCaster{
+    constructor(){
         this.spells = []
         const form = document.querySelector('#spellManipulators form')
         form.addEventListener('submit', (ev) => this.handleSubmit(ev))
-    },
+    }
     
-    renderProperty: function(className, textContent){
+    renderProperty(className, textContent){
         const span = document.createElement('span')
         span.textContent = textContent
         span.classList.add(className)
         return span
-    },
+    }
 
-    renderDeleteButton: function(className, textContent){
+    renderDeleteButton(className, textContent){
         const deleteButton = document.createElement('button')
         deleteButton.textContent = textContent
         deleteButton.classList.add(className)
         deleteButton.addEventListener('click', (ev) => this.handleDeleteButton(ev))
         return deleteButton
-    },
+    }
 
-    handleDeleteButton: function(ev){
+    handleDeleteButton(ev){
         const deleteButton = ev.target
         const parent = deleteButton.parentNode
         
         this.spells.splice(this.spells.indexOf(parent), 1)
         parent.parentNode.removeChild(parent)
-    },
+    }
 
-    renderItem: function(obj){
+    renderItem(obj){
         const properties = Object.keys(obj)
         const listItem = document.createElement('li')
     
@@ -43,9 +43,9 @@ const SpellCaster = {
         this.spells.push(listItem)
 
         return listItem
-    },
+    }
 
-    handleSubmit: function(ev){
+    handleSubmit(ev){
         ev.preventDefault()
 
         const form = ev.target
@@ -64,4 +64,4 @@ const SpellCaster = {
     }
 }
 
-SpellCaster.init()
+new SpellCaster()
