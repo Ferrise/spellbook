@@ -120,5 +120,8 @@ form{
     display: flex;
     flex-wrap: wrap;
     top: 20px;
-    
+}
+
+.liTemplate{
+    display: none;
 }
