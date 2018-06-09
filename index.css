@@ -125,3 +125,8 @@ form{
 .liTemplate{
     display: none;
 }
+
+button.delete{
+    color:red;
+    background-color: purple;
+}

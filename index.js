@@ -23,7 +23,8 @@ class SpellCaster{
         
         const listItem = this.template.cloneNode(true)
         listItem.classList.remove('liTemplate')
-    
+        
+        //sets the class and text content of each element
         properties.forEach((property) => {
             let element = listItem.querySelector(`.${property}`)
 
