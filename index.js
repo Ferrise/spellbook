@@ -18,24 +18,32 @@ class SpellCaster{
         parent.parentNode.removeChild(parent)
     }
 
+    toggleFavorite(ev){
+        const favoriteButton = ev.target
+        const parent = favoriteButton.closest('li')
+        
+        parent.classList.toggle('favorite')
+    }
+
     renderItem(obj){
         const properties = Object.keys(obj)
         
         const listItem = this.template.cloneNode(true)
+        //Causes this list item to be visible
         listItem.classList.remove('liTemplate')
         
-        //sets the class and text content of each element
+        //Sets the class and text content of each element
         properties.forEach((property) => {
             let element = listItem.querySelector(`.${property}`)
 
-            //to handle different radio button checks
+            //To handle different radio button checks
             if(element){
-                element.textContent = obj[property] + " "
-            }else{
+                element.textContent = obj[property] + ' '
+            }else {
                 element = listItem.querySelector('.dark')
                 element.classList.remove('dark')
                 element.classList.add(property)
-                element.textContent = obj[property] + " "
+                element.textContent = obj[property] + ' '
             }
         })
 
@@ -44,6 +52,13 @@ class SpellCaster{
             .querySelector('.delete')
             .addEventListener('click',
             (ev) => this.deleteItem(ev)
+        )
+
+        //favorite button
+        listItem
+            .querySelector('#favorite')
+            .addEventListener('click',
+            (ev) => this.toggleFavorite(ev)
         )
         
         this.spells.push(listItem)
@@ -54,16 +69,19 @@ class SpellCaster{
     handleSubmit(ev){
         ev.preventDefault()
 
+        //Retrieves class and text value information from inputs
         const form = ev.target
         const magicUserTypes = Array.from(document.querySelectorAll('#magicUserType input'))
         const magicUserType = (magicUserTypes.filter((type) => type.checked))[0].className
 
+        //Holds class-text value key-value pairs
         const info = {
+            spell: form.textBox.value,
         }
         
         info[magicUserType] = magicUserType
-        info["spell"] = form.textBox.value
 
+        //Append new list item to unordered list
         document.querySelector('#spellList').appendChild(this.renderItem(info))
     
         form.reset()

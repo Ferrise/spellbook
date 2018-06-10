@@ -30,7 +30,7 @@ main{
     background-image: url(spell_book.png);
     background-size: cover;
     position: relative;
-    bottom: 300px;
+    bottom: 320px;
     width: 950px;
     margin-left: 20vw;
     margin-top: 300px;
@@ -88,6 +88,7 @@ form{
     width: 50%;
     position: relative;
     left: 21vw;
+    bottom: 20px;
   }
 
 
@@ -126,7 +127,16 @@ form{
     display: none;
 }
 
+li.favorite {
+    background-color: yellow;
+}
+
 button.delete{
-    color:red;
+    color: white;
     background-color: purple;
+}
+
+#favorite {
+    color: red;
+    background-color: white;
 }
