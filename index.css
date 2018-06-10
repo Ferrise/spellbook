@@ -120,6 +120,7 @@ form{
     left: 75px;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     top: 20px;
 }
 
@@ -129,11 +130,17 @@ form{
 
 li.favorite {
     background-color: yellow;
+    opacity: 0.3;
 }
 
 button.delete{
     color: white;
     background-color: purple;
+}
+
+button.move{
+    color: white;
+    background-color: blue;
 }
 
 #favorite {

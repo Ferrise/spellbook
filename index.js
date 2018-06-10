@@ -15,14 +15,20 @@ class SpellCaster{
         const parent = deleteButton.closest('li')
         
         this.spells.splice(this.spells.indexOf(parent), 1)
-        parent.parentNode.removeChild(parent)
+        this.list.removeChild(parent)
     }
 
     toggleFavorite(ev){
         const favoriteButton = ev.target
         const parent = favoriteButton.closest('li')
-        
+
         parent.classList.toggle('favorite')
+    }
+
+    moveItemUp(ev){
+        const upButton = ev.target
+        const parent = upButton.closest('li')
+        this.list.insertBefore(parent, parent.previousSibling)
     }
 
     renderItem(obj){
@@ -60,6 +66,13 @@ class SpellCaster{
             .addEventListener('click',
             (ev) => this.toggleFavorite(ev)
         )
+
+        //up button 
+        listItem
+            .querySelector('button.move')
+            .addEventListener('click',
+        (ev) => this.moveItemUp(ev)
+    )
         
         this.spells.push(listItem)
 
