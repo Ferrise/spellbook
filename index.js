@@ -44,6 +44,25 @@ class SpellCaster{
        
     }
 
+    moveItemDown(ev){
+        const downButton = ev.target;
+        const parent = downButton.closest('li')
+
+        // Location of item to be moved in spells array
+        const index = this.spells.indexOf(parent)
+
+        if(index < this.spells.length - 1){
+            // Move list items in spells array
+            const next = this.spells[index + 1]
+            this.spells[index + 1] = parent
+            this.spells[index] = next
+
+            this.list.insertBefore(parent.nextSibling, parent)
+        }
+
+    
+    }
+
     renderItem(obj){
         const properties = Object.keys(obj)
         
@@ -82,9 +101,16 @@ class SpellCaster{
 
         //up button 
         listItem
-            .querySelector('button.move')
+            .querySelector('button.up')
             .addEventListener('click',
         (ev) => this.moveItemUp(ev)
+    )
+
+        //down button
+        listItem
+            .querySelector('button.down')
+            .addEventListener('click',
+        (ev) => this.moveItemDown(ev)
     )
         
         this.spells.push(listItem)
