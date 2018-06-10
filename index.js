@@ -33,7 +33,7 @@ class SpellCaster{
         const index = this.spells.indexOf(parent)
 
         // Moves parent unless it is at the top of the list
-        if(parent > 0){
+        if(index > 0){
             // Move list item in spells array
             const previous = this.spells[i - 1]
             this.spells[i - 1] = parent
