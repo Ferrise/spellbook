@@ -28,7 +28,20 @@ class SpellCaster{
     moveItemUp(ev){
         const upButton = ev.target
         const parent = upButton.closest('li')
-        this.list.insertBefore(parent, parent.previousSibling)
+        
+        // Location of item to be moved in spells array
+        const index = this.spells.indexOf(parent)
+
+        // Moves parent unless it is at the top of the list
+        if(parent > 0){
+            // Move list item in spells array
+            const previous = this.spells[i - 1]
+            this.spells[i - 1] = parent
+            this.spells[i] = previous
+
+            this.list.insertBefore(parent, parent.previousSibling)
+        }
+       
     }
 
     renderItem(obj){
