@@ -10,12 +10,20 @@ class SpellCaster{
         form.addEventListener('submit', (ev) => this.handleSubmit(ev))
     }
 
+   save(){
+       localStorage.setItem(
+           'spells', 
+           JSON.stringify(this.spells)
+        )
+   }
+
    deleteItem(ev){
         const deleteButton = ev.target
         const parent = deleteButton.closest('li')
         
         this.spells.splice(this.spells.indexOf(parent), 1)
         this.list.removeChild(parent)
+        this.save()
     }
 
     toggleFavorite(ev){
@@ -23,6 +31,7 @@ class SpellCaster{
         const parent = favoriteButton.closest('li')
 
         parent.classList.toggle('favorite')
+        this.save()
     }
 
     moveItemUp(ev){
@@ -41,6 +50,7 @@ class SpellCaster{
 
             this.list.insertBefore(parent, parent.previousSibling)
         }
+        this.save()
        
     }
 
@@ -60,7 +70,7 @@ class SpellCaster{
             this.list.insertBefore(parent.nextSibling, parent)
         }
 
-    
+        this.save()
     }
 
     renderItem(obj){
@@ -114,7 +124,7 @@ class SpellCaster{
     )
         
         this.spells.push(listItem)
-
+        
         return listItem
     }
 
@@ -135,7 +145,8 @@ class SpellCaster{
 
         //Append new list item to unordered list
         document.querySelector('#spellList').appendChild(this.renderItem(info))
-    
+        
+        this.save()
         form.reset()
     }
 }
